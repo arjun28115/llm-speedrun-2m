@@ -13,7 +13,7 @@ The score is **bits per byte (BPB)** on held-out text. Lower is better.
 
 | Model | Vocab | Params | Steps | Dev BPB |
 |---|---|---|---|---|
-| Baseline submission ([Priyanshu Pandey](https://github.com/priyanshup0046/plivo-ml--240809-)) | 2,048 | 1,837,616 | 2,000 | 1.6779 |
+| Baseline submission  | 2,048 | 1,837,616 | 2,000 | 1.6779 |
 | **This repo** | **2,944** | **1,995,312** | **2,000** | **1.6678** |
 
 The only change between the two rows is the tokenizer vocabulary (2,048 → 2,944), with the same 4-layer, 176-dim model, optimizer, schedule and seed. The larger vocabulary compresses the corpus to 3.65 bytes per token, so each of the 2,000 steps sees more text, and the extra embedding rows still fit under the 2M-parameter cap (1,995,312).
